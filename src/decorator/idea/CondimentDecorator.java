@@ -1,7 +1,7 @@
 package decorator.idea;
 
 public abstract class CondimentDecorator extends Beverage {
-    Beverage beverage;
+    protected Beverage beverage;
     public abstract String getDescription();
 
 

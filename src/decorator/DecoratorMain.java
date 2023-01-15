@@ -1,5 +1,6 @@
 package decorator;
 
+import decorator.concrete.*;
 import decorator.idea.*;
 import main.MainTest;
 
