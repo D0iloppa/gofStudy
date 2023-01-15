@@ -1,5 +1,6 @@
-package chapters.observer.concrete;
+package chapters.observer.concrete.observer;
 
+import chapters.observer.concrete.subject.WeatherData;
 import chapters.observer.idea.DisplayElement;
 import chapters.observer.idea.Observer;
 
@@ -27,6 +28,13 @@ public class ForecastDisplay implements Observer, DisplayElement {
 
     @Override
     public void update(float temp, float humidity, float pressure) {
+        lastPressure = currentPressure;
+        currentPressure = weatherData.getPressure();
+        display();
+    }
+
+    @Override
+    public void update() {
         lastPressure = currentPressure;
         currentPressure = weatherData.getPressure();
         display();

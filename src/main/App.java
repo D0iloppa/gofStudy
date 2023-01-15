@@ -14,6 +14,7 @@ public class App {
     public static void main(String[] args) {
 
         // gofVo.iterateExecute();
+
         gofVo.singleExecute("decorator");
     }
 

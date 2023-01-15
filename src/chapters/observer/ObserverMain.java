@@ -1,10 +1,10 @@
 package chapters.observer;
 
 import main.MainTest;
-import chapters.observer.concrete.CurrentConditionsDisplay;
-import chapters.observer.concrete.ForecastDisplay;
-import chapters.observer.concrete.HeatIndexDisplay;
-import chapters.observer.concrete.WeatherData;
+import chapters.observer.concrete.observer.CurrentConditionsDisplay;
+import chapters.observer.concrete.observer.ForecastDisplay;
+import chapters.observer.concrete.observer.HeatIndexDisplay;
+import chapters.observer.concrete.subject.WeatherData;
 
 public class ObserverMain implements MainTest {
     @Override
