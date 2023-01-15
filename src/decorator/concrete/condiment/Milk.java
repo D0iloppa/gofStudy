@@ -1,11 +1,11 @@
-package decorator.concrete;
+package decorator.concrete.condiment;
 
 import decorator.idea.Beverage;
 import decorator.idea.CondimentDecorator;
 
-public class Whip extends CondimentDecorator {
+public class Milk extends CondimentDecorator {
 
-    public Whip(Beverage beverage) {
+    public Milk(Beverage beverage) {
         this.beverage = beverage;
     }
 
@@ -14,6 +14,6 @@ public class Whip extends CondimentDecorator {
     }
 
     public String getDescription() {
-        return beverage.getDescription() + ", 휘핑크림";
+        return beverage.getDescription() + ", 우유";
     }
 }
