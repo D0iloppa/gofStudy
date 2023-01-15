@@ -1,9 +1,9 @@
 package main;
 
 
-import decorator.DecoratorMain;
-import observer.ObserverMain;
-import strategy.StrategyMain;
+import chapters.decorator.DecoratorMain;
+import chapters.observer.ObserverMain;
+import chapters.strategy.StrategyMain;
 
 import java.util.*;
 
