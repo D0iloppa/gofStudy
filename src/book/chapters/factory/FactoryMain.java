@@ -1,5 +1,6 @@
 package book.chapters.factory;
 
+import book.chapters.factory.concrete.exception.PizzaException;
 import book.chapters.factory.concrete.store.ChicagoPizzaStore;
 import book.chapters.factory.concrete.store.NYPizzaStore;
 import book.chapters.factory.idea.Pizza;
@@ -30,8 +31,8 @@ public class FactoryMain implements MainTest {
             type = "cheese";
             pizza = nyStore.orderPizza(type);
             System.out.printf("에단이 주문한 %s\n\n",pizza.getName());
-        } catch (Exception e) {
-            System.err.printf("에러발생 : [pizza type='%s'] %s\n",type,e.getMessage());
+        } catch (PizzaException e) {
+            e.printErr();
         }
 
         // 조엘이 주문
@@ -39,8 +40,8 @@ public class FactoryMain implements MainTest {
             type = "cheese";
             pizza = chicagoStore.orderPizza(type);
             System.out.printf("조엘이 주문한 %s\n\n",pizza.getName());
-        }catch (Exception e){
-            System.err.printf("에러발생 : [pizza type='%s'] %s\n",type,e.getMessage());
+        }catch (PizzaException e){
+            e.printErr();
         }
 
         // 존재하지 않는 유형 주문 한 경우
@@ -48,8 +49,8 @@ public class FactoryMain implements MainTest {
             type = "test";
             pizza = nyStore.orderPizza(type);
             System.out.printf("도일이 주문한 %s\n\n",pizza.getName());
-        } catch (Exception e) {
-            System.err.printf("에러발생 : [PIZZA TYPE='%s'] %s\n",type,e.getMessage());
+        } catch (PizzaException e) {
+            e.printErr();
         }
 
     }
