@@ -13,6 +13,7 @@ public class App {
 
     public static void main(String[] args) {
 
+
         // gofVo.iterateExecute();
 
         gofVo.singleExecute("decorator");
@@ -37,17 +38,41 @@ public class App {
             this.targetApps.put("decorator" , new DecoratorMain());
         }
 
+
+        public void inputApp(String key , MainTest app){
+            try{
+                if("".equals(key) || key == null) throw new Exception("key는 반드시 입력");
+                else if(targetApps.containsKey(key)) throw new Exception("key 중복 삽입 불가");
+                else if(!(app instanceof MainTest) || app == null) throw new Exception("잘못된 app 삽입 불가.");
+
+                this.targetApps.put(key , app);
+
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
+        }
+
         public MainTest getTarget(String key){
             return targetApps.get(key);
         }
 
         public void singleExecute(String key){
             // 메인 실행함수
-            MainTest targetApp = this.getTarget(key);
+            try{
+                MainTest targetApp = this.getTarget(key);
 
-            String description = targetApp.description();
-            System.out.printf("[%s]\n",description);
-            targetApp.execute();
+                if(targetApp == null) throw new Exception("존재하지 않는 app");
+
+                String description = targetApp.description();
+                System.out.printf("[%s]\n",description);
+                targetApp.execute();
+
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+
+
         }
 
         public void iterateExecute(){

@@ -3,17 +3,25 @@ package chapters.decorator.concrete.condiment;
 import chapters.decorator.idea.Beverage;
 import chapters.decorator.idea.CondimentDecorator;
 
+import java.util.List;
+
 public class Mocha extends CondimentDecorator {
     public Mocha(Beverage beverage) {
         this.beverage = beverage;
     }
 
     public double cost() {
-        return beverage.cost() + 0.20;
+        Size size = beverage.getSize();
+        double cost = 0.20 * size.getValue();
+        return beverage.cost() + cost;
     }
 
 
-    public String getDescription() {
-        return beverage.getDescription() + ", 모카";
+    public List<String> getDescription() {
+        //return beverage.getDescription() + ", 모카";
+        List<String> descriptions = beverage.getDescription();
+        descriptions.add("모카");
+
+        return descriptions;
     }
 }

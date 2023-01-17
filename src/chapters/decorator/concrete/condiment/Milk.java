@@ -3,6 +3,8 @@ package chapters.decorator.concrete.condiment;
 import chapters.decorator.idea.Beverage;
 import chapters.decorator.idea.CondimentDecorator;
 
+import java.util.List;
+
 public class Milk extends CondimentDecorator {
 
     public Milk(Beverage beverage) {
@@ -10,10 +12,17 @@ public class Milk extends CondimentDecorator {
     }
 
     public double cost() {
-        return beverage.cost() + 0.10;
+        Size size = beverage.getSize();
+        double cost = 0.10 * size.getValue();
+        return beverage.cost() + cost;
     }
 
-    public String getDescription() {
-        return beverage.getDescription() + ", 우유";
+    public List<String> getDescription() {
+
+        //return beverage.getDescription() + ", 우유";
+        List<String> descriptions = beverage.getDescription();
+        descriptions.add("우유");
+
+        return descriptions;
     }
 }

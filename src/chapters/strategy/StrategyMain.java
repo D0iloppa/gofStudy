@@ -30,7 +30,7 @@ public class StrategyMain implements MainTest {
         System.out.print("model(fly) : ");
         model.performFly();
 
-        // Duck 클래스를 호출 받지 않음
+        // Duck 클래스를 상속받지 않음
         // 오리 소리를 내기만 함
         DuckPager duckPager = new DuckPager();
         duckPager.setSound(new Quack());
