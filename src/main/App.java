@@ -1,9 +1,10 @@
 package main;
 
 
-import chapters.decorator.DecoratorMain;
-import chapters.observer.ObserverMain;
-import chapters.strategy.StrategyMain;
+import book.chapters.decorator.DecoratorMain;
+import book.chapters.factory.FactoryMain;
+import book.chapters.observer.ObserverMain;
+import book.chapters.strategy.StrategyMain;
 
 import java.util.*;
 
@@ -16,7 +17,7 @@ public class App {
 
         // gofVo.iterateExecute();
 
-        gofVo.singleExecute("decorator");
+        gofVo.singleExecute("factory");
     }
 
 
@@ -36,6 +37,7 @@ public class App {
             this.targetApps.put("strategy"  , new StrategyMain());
             this.targetApps.put("observer"  , new ObserverMain());
             this.targetApps.put("decorator" , new DecoratorMain());
+            this.targetApps.put("factory" , new FactoryMain());
         }
 
 
