@@ -4,6 +4,7 @@ package main;
 import book.chapters.decorator.DecoratorMain;
 import book.chapters.factory.FactoryMain;
 import book.chapters.observer.ObserverMain;
+import book.chapters.singleton.SingletonMain;
 import book.chapters.strategy.StrategyMain;
 
 import java.util.*;
@@ -17,7 +18,7 @@ public class App {
 
         // gofVo.iterateExecute();
 
-        gofVo.singleExecute("factory");
+        gofVo.singleExecute("singleton");
     }
 
 
@@ -38,6 +39,7 @@ public class App {
             this.targetApps.put("observer"  , new ObserverMain());
             this.targetApps.put("decorator" , new DecoratorMain());
             this.targetApps.put("factory" , new FactoryMain());
+            this.targetApps.put("singleton" , new SingletonMain());
         }
 
 
