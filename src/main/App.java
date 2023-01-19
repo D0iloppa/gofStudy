@@ -1,6 +1,7 @@
 package main;
 
 
+import book.chapters.command.CommandMain;
 import book.chapters.decorator.DecoratorMain;
 import book.chapters.factory.FactoryMain;
 import book.chapters.observer.ObserverMain;
@@ -18,7 +19,7 @@ public class App {
 
         // gofVo.iterateExecute();
 
-        gofVo.singleExecute("singleton");
+        gofVo.singleExecute("command");
     }
 
 
@@ -33,13 +34,14 @@ public class App {
 
         // targetAppsSetting
         public GoFVO() {
-            targetApps = new LinkedHashMap<>();
-
-            this.targetApps.put("strategy"  , new StrategyMain());
-            this.targetApps.put("observer"  , new ObserverMain());
-            this.targetApps.put("decorator" , new DecoratorMain());
-            this.targetApps.put("factory" , new FactoryMain());
-            this.targetApps.put("singleton" , new SingletonMain());
+            targetApps = new LinkedHashMap<String,MainTest>(){{
+                put("strategy"  , new StrategyMain());
+                put("observer"  , new ObserverMain());
+                put("decorator" , new DecoratorMain());
+                put("factory" , new FactoryMain());
+                put("singleton" , new SingletonMain());
+                put("command", new CommandMain());
+            }};
         }
 
 
